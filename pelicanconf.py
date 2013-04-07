@@ -14,10 +14,10 @@ CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
 THEME = "./themes/lenage"
 
 # Blogroll
-LINKS =  (('Pelican', 'http://docs.notmyidea.org/alexis/pelican/'),
-          ('Python.org', 'http://python.org'),
-          ('Jinja2', 'http://jinja.pocoo.org'),
-          ('Blog', 'http://blog.lenage.com'),)
+# LINKS =  (('Pelican', 'http://docs.notmyidea.org/alexis/pelican/'),
+#           ('Python.org', 'http://python.org'),
+#           ('Jinja2', 'http://jinja.pocoo.org'),
+#           ('Blog', 'http://blog.lenage.com'),)
 
 # Social widget
 SOCIAL = (('twitter', 'http://twitter.com/heyuan'),
@@ -28,7 +28,7 @@ SOCIAL = (('twitter', 'http://twitter.com/heyuan'),
 # GITHUB_URL = "https://github.com/lenage"
 
 # Twitter
-TWITTER_USERNAME = "heyuan"
+# TWITTER_USERNAME = "heyuan"
 # static paths will be copied under the same name
 STATIC_PATHS = ["pictures", ]
 
