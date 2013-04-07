@@ -31,6 +31,7 @@ SOCIAL = (('twitter', 'http://twitter.com/heyuan'),
 # TWITTER_USERNAME = "heyuan"
 # static paths will be copied under the same name
 
+DISQUS_SITENAME="lenageonpi"
 # A list of files to copy from the source to the destination
 FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),)
 
