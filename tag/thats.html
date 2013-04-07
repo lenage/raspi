@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-        <title>Life with π - thats</title>
+        <title>LIFE WITH PI - thats</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="http://lenage.me/theme/css/main.css" type="text/css" />
-                <link href="http://lenage.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Life with π Atom Feed" />
-                        <link href="http://lenage.me/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Life with π RSS Feed" />
+                <link href="http://lenage.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="LIFE WITH PI Atom Feed" />
+                        <link href="http://lenage.me/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="LIFE WITH PI RSS Feed" />
         
         <!--[if IE]>
                 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -16,25 +16,22 @@
 
         <!--[if lt IE 7]>
                 <link rel="stylesheet" type="text/css" media="all" href="http://lenage.me/css/ie6.css"/><![endif]-->
-
+        <script src="http://lenage.me/theme/js/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="http://lenage.me/theme/js/jquery-1.8.3.min.js"><\/script>')</script>
 </head>
 
 <body id="index" class="home">
-<a href="https://github.com/lenage">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
-</a>
         <header id="banner" class="body">
-                <h1><a href="http://lenage.me/">Life with π  <strong>Yuan's Raspberry Pi notes</strong></a></h1>
-                <nav><ul>
-                                                                                                    <li ><a href="http://lenage.me/category/home.html">Home</a></li>
-                                </ul></nav>
-        </header><!-- /#banner -->
-                
-            
-
-                            <aside id="featured" class="body">
+          <div class="header-inner">
+                <h1><a href="http://lenage.me/">LIFE WITH PI </a></h1>
+                <h2 id="tagline">Yuan's Raspberry Pi notes</h2>
+          </div>
+          <h1 id="title-small"> <a href="http://lenage.me/">LIFE WITH PI </a></h1>
+                        </header><!-- /#banner -->
+                                        <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://lenage.me/my-super-post.html">My super title</a></h1> 
+                    <h1 class="entry-title"><a href="http://lenage.me/my-super-post.html">openbox 配置指南</a></h1>
                     <footer class="post-info">
         <abbr class="published" title="2013-04-01T23:36:00">
                 Mon 01 April 2013
@@ -44,45 +41,123 @@
                 By <a class="url fn" href="http://lenage.me/author/yuan-he.html">Yuan He</a>
         </address>
         <p>In <a href="http://lenage.me/category/home.html">Home</a>. </p>
-<p>tags: <a href="http://lenage.me/tag/thats.html">thats</a><a href="http://lenage.me/tag/awesome.html">awesome</a></p>
-</footer><!-- /.post-info --><p>This is the content of my super blog post.</p>                </article>
-                                    <p class="paginator">
+<p>tags: <a href="http://lenage.me/tag/thats.html">thats</a><a href="http://lenage.me/tag/awesome.html">awesome</a></p></footer><!-- /.post-info --><p>背景：之前用ubuntu+gnome的时候快捷键有效，切换到archlinux+openbox后快捷键失灵，只能用alsamixer调节音量，
+安装过volwheel，但还是不好用，后来在#ubuntu-cn频道找到了解决办法，如下：</p>
+<p>1.确定内核是否支持，在终端中运行 xev，然后触摸按键，看输出：</p>
+<div class="codehilite"><pre><span class="n">KeyRelease</span> <span class="n">event</span><span class="p">,</span> <span class="n">serial</span> 40<span class="p">,</span> <span class="n">synthetic</span> <span class="n">NO</span><span class="p">,</span> <span class="n">window</span> 0×2600001<span class="p">,</span>
+<span class="n">root</span> 0<span class="n">x15a</span><span class="p">,</span> <span class="n">subw</span> 0×0<span class="p">,</span> <span class="n">time</span> 20902899<span class="p">,</span> <span class="p">(</span>240<span class="p">,</span>92<span class="p">),</span> <span class="n">root</span><span class="p">:(</span>387<span class="p">,</span>402<span class="p">),</span>
+<span class="n">state</span> 0×0<span class="p">,</span> <span class="n">keycode</span> 121 <span class="p">(</span><span class="n">keysym</span> 0<span class="n">x1008ff12</span><span class="p">,</span> <span class="n">XF86AudioMute</span><span class="p">),</span> <span class="n">same</span><span class="o">\</span><span class="n">_screen</span> <span class="n">YES</span><span class="p">,</span>
+<span class="n">XLookupString</span> <span class="n">gives</span> 0 <span class="n">bytes</span><span class="p">:</span>
+<span class="n">XFilterEvent</span> <span class="n">returns</span><span class="p">:</span> <span class="n">False</span>
+</pre></div>
+
+
+<p>如果能得到如上的输出，你得到的不一定和我的完全一样，但至少要能在其中找到按键标识，即上面红色指出的部分。</p>
+<p>2.从上面的输出我们可以看出，该按键市静音按钮，用vim或者你喜欢的编辑器打开 <code>~/.config/openbox/rc.xml</code>文件，
+找到keybind部分；然后设置按键<code>XF86AudioMute</code>运行<code>amixer sset Master,0 toggle：</code></p>
+<div class="codehilite"><pre><span class="nt">&lt;keybind</span> <span class="na">key=</span><span class="s">”XF86AudioMute”</span><span class="nt">&gt;</span>
+<span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">”Execute”</span><span class="nt">&gt;</span>
+<span class="nt">&lt;startupnotify&gt;</span>
+<span class="nt">&lt;enabled&gt;</span>true<span class="nt">&lt;/enabled&gt;</span>
+<span class="nt">&lt;name&gt;</span>Audio mute<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;/startupnotify&gt;</span>
+<span class="nt">&lt;command&gt;</span>amixer sset Master,0 toggle<span class="nt">&lt;/command&gt;</span>
+<span class="nt">&lt;/action&gt;</span>
+<span class="nt">&lt;/keybind&gt;</span>
+</pre></div>
+
+
+<p>3.用第一步的方法得到增大音量和减小音量的按键标识分别是<code>XF86AudioRaiseVolume</code>和<code>XF86AudioLowerVolume</code>；
+分别绑定为<code>amixer sset Master 2%+</code>（增加音量）<code>amixer sset Master 2%-</code>（减小音量），如下：</p>
+<div class="codehilite"><pre><span class="nt">&lt;keybind</span> <span class="na">key=</span><span class="s">”XF86AudioMute”</span><span class="nt">&gt;</span>
+<span class="nt">&lt;keybind</span> <span class="na">key=</span><span class="s">”XF86AudioRaiseVolume”</span><span class="nt">&gt;</span>
+<span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">”Execute”</span><span class="nt">&gt;</span>
+<span class="nt">&lt;startupnotify&gt;</span>
+<span class="nt">&lt;enabled&gt;</span>true<span class="nt">&lt;/enabled&gt;</span>
+<span class="nt">&lt;name&gt;</span>Audio raise<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;/startupnotify&gt;</span>
+<span class="nt">&lt;command&gt;</span>amixer sset Master 2%+<span class="nt">&lt;/command&gt;</span>
+<span class="nt">&lt;/action&gt;</span>
+<span class="nt">&lt;/keybind&gt;</span>
+<span class="nt">&lt;keybind</span> <span class="na">key=</span><span class="s">”XF86AudioLowerVolume”</span><span class="nt">&gt;</span>
+<span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">”Execute”</span><span class="nt">&gt;</span>
+<span class="nt">&lt;startupnotify&gt;</span>
+<span class="nt">&lt;enabled&gt;</span>true<span class="nt">&lt;/enabled&gt;</span>
+<span class="nt">&lt;name&gt;</span>Audio lower<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;/startupnotify&gt;</span>
+<span class="nt">&lt;command&gt;</span>amixer sset Master 2%- <span class="nt">&lt;/command&gt;</span>
+<span class="nt">&lt;/action&gt;</span>
+<span class="nt">&lt;/keybind&gt;</span>
+</pre></div>
+
+
+<p>4.在终端中运行$-&gt; <code>openbox –reconfigure done</code>,现在可以享受快捷键带来的快感了。</p>                </article>
+                            </aside><!-- /#featured -->
+                            <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+                                                                                <li><article class="hentry">
+                <header>
+                    <h1><a href="http://lenage.me/my-super-post1.html" rel="bookmark"
+                           title="Permalink to My super title">My super title</a></h1>
+                </header>
+                <div class="entry-content">
+                  <footer class="post-info">
+        <abbr class="published" title="2013-04-01T23:36:00">
+                Mon 01 April 2013
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="http://lenage.me/author/yuan-he.html">Yuan He</a>
+        </address>
+        <p>In <a href="http://lenage.me/category/home.html">Home</a>. </p>
+<p>tags: <a href="http://lenage.me/tag/thats.html">thats</a><a href="http://lenage.me/tag/awesome.html">awesome</a></p></footer><!-- /.post-info -->                    some Summary
+                    <a class="readmore" href="http://lenage.me/my-super-post1.html">read more</a>
+                                  </div><!-- /.entry-content -->
+            </article></li>
+                                                            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://lenage.me/my-test2-post.html" rel="bookmark"
+                           title="Permalink to openbox 配置指南">openbox 配置指南</a></h1>
+                </header>
+                <div class="entry-content">
+                  <footer class="post-info">
+        <abbr class="published" title="2013-04-01T23:36:00">
+                Mon 01 April 2013
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="http://lenage.me/author/yuan-he.html">Yuan He</a>
+        </address>
+        <p>In <a href="http://lenage.me/category/home.html">Home</a>. </p>
+<p>tags: <a href="http://lenage.me/tag/thats.html">thats</a><a href="http://lenage.me/tag/awesome.html">awesome</a></p></footer><!-- /.post-info -->                    ok, lets, say somthing
+                    <a class="readmore" href="http://lenage.me/my-test2-post.html">read more</a>
+                                  </div><!-- /.entry-content -->
+            </article></li>
+                            </ol><!-- /#posts-list -->
+                            <p class="paginator">
         Page 1 / 1
     </p>
-                            </aside><!-- /#featured -->
-                                                </ol><!-- /#posts-list -->
                         </section><!-- /#content -->
-                    <section id="extras" class="body">
-                        <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                                                    <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
-                                                    <li><a href="http://python.org">Python.org</a></li>
-                                                    <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
-                                                    <li><a href="http://blog.lenage.com">Blog</a></li>
-                                                </ul>
-                </div><!-- /.blogroll -->
-                                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="http://lenage.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-                                                        <li><a href="http://lenage.me/feeds/all.rss.xml" type="application/rss+xml" rel="alternate">rss feed</a></li>
-                            
-                                                    <li><a href="http://twitter.com/heyuan">twitter</a></li>
-                                                    <li><a href="http://github.com/lenage">github</a></li>
-                                                    <li><a href="http://bitbucket.org/lenage">Bitbucket</a></li>
-                                                </ul>
-                </div><!-- /.social -->
-                </section><!-- /#extras -->
+                    <footer id="contentinfo" class="body">
+          <a class="pi-status-hook">π status</a>
+                    <ul class="social">
+            <li><a href="http://lenage.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                        <li><a href="http://lenage.me/feeds/all.rss.xml" type="application/rss+xml" rel="alternate">rss feed</a></li>
+            
+                        <li><a href="http://twitter.com/heyuan">twitter</a></li>
+                        <li><a href="http://github.com/lenage">github</a></li>
+                        <li><a href="http://bitbucket.org/lenage">Bitbucket</a></li>
+                      </ul>
+                  </footer><!-- /#contentinfo -->
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
+        <section id="status" class="body">
+          <h2>Raspberry Pi status:</h2>
+            <img src="https://api.cosm.com/v2/feeds/120935/datastreams/5min.png?width=400&height=200&duration=3hours&colour=%2344A340&title=%CF%80%20Realtime%20Load&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Beijing"/>
+            <img style="float: right" src="https://api.cosm.com/v2/feeds/120935/datastreams/temp.png?width=400&height=200&duration=3hours&colour=%23f15a24&title=%CF%80%20Realtime%20CPU%20Temp&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Beijing"/>
+        </section><!-- /#extras -->
+        <script src="http://lenage.me/theme/js/main.js"></script>
 <script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

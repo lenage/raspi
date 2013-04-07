@@ -1,2 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Life with π</title><link>http://lenage.me/</link><description>Yuan's Raspberry Pi notes</description><atom:link href="http://lenage.me/feeds/Home.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 01 Apr 2013 23:36:00 +0800</lastBuildDate><item><title>My super title</title><link>http://lenage.me/my-super-post.html</link><description>&lt;p&gt;This is the content of my super blog post.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yuan He</dc:creator><pubDate>Mon, 01 Apr 2013 23:36:00 +0800</pubDate><guid>tag:lenage.me,2013-04-01:my-super-post.html</guid><category>thats</category><category>awesome</category></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>LIFE WITH PI</title><link>http://lenage.me/</link><description>Yuan's Raspberry Pi notes</description><atom:link href="http://lenage.me/feeds/Home.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 01 Apr 2013 23:36:00 +0800</lastBuildDate><item><title>openbox 配置指南</title><link>http://lenage.me/my-super-post.html</link><description>&lt;p&gt;背景：之前用ubuntu+gnome的时候快捷键有效，切换到archlinux+openbox后快捷键失灵，只能用alsamixer调节音量，
+安装过volwheel，但还是不好用，后来在#ubuntu-cn频道找到了解决办法，如下：&lt;/p&gt;
+&lt;p&gt;1.确定内核是否支持，在终端中运行 xev，然后触摸按键，看输出：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;KeyRelease&lt;/span&gt; &lt;span class="n"&gt;event&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;serial&lt;/span&gt; 40&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;synthetic&lt;/span&gt; &lt;span class="n"&gt;NO&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;window&lt;/span&gt; 0×2600001&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="n"&gt;root&lt;/span&gt; 0&lt;span class="n"&gt;x15a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;subw&lt;/span&gt; 0×0&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt; 20902899&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;240&lt;span class="p"&gt;,&lt;/span&gt;92&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="p"&gt;:(&lt;/span&gt;387&lt;span class="p"&gt;,&lt;/span&gt;402&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="n"&gt;state&lt;/span&gt; 0×0&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;keycode&lt;/span&gt; 121 &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keysym&lt;/span&gt; 0&lt;span class="n"&gt;x1008ff12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;XF86AudioMute&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;same&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;_screen&lt;/span&gt; &lt;span class="n"&gt;YES&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="n"&gt;XLookupString&lt;/span&gt; &lt;span class="n"&gt;gives&lt;/span&gt; 0 &lt;span class="n"&gt;bytes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;XFilterEvent&lt;/span&gt; &lt;span class="n"&gt;returns&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;False&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;如果能得到如上的输出，你得到的不一定和我的完全一样，但至少要能在其中找到按键标识，即上面红色指出的部分。&lt;/p&gt;
+&lt;p&gt;2.从上面的输出我们可以看出，该按键市静音按钮，用vim或者你喜欢的编辑器打开 &lt;code&gt;~/.config/openbox/rc.xml&lt;/code&gt;文件，
+找到keybind部分；然后设置按键&lt;code&gt;XF86AudioMute&lt;/code&gt;运行&lt;code&gt;amixer sset Master,0 toggle：&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;keybind&lt;/span&gt; &lt;span class="na"&gt;key=&lt;/span&gt;&lt;span class="s"&gt;”XF86AudioMute”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;action&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;”Execute”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;startupnotify&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;enabled&amp;gt;&lt;/span&gt;true&lt;span class="nt"&gt;&amp;lt;/enabled&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;Audio mute&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/startupnotify&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;command&amp;gt;&lt;/span&gt;amixer sset Master,0 toggle&lt;span class="nt"&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/action&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/keybind&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;3.用第一步的方法得到增大音量和减小音量的按键标识分别是&lt;code&gt;XF86AudioRaiseVolume&lt;/code&gt;和&lt;code&gt;XF86AudioLowerVolume&lt;/code&gt;；
+分别绑定为&lt;code&gt;amixer sset Master 2%+&lt;/code&gt;（增加音量）&lt;code&gt;amixer sset Master 2%-&lt;/code&gt;（减小音量），如下：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;keybind&lt;/span&gt; &lt;span class="na"&gt;key=&lt;/span&gt;&lt;span class="s"&gt;”XF86AudioMute”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;keybind&lt;/span&gt; &lt;span class="na"&gt;key=&lt;/span&gt;&lt;span class="s"&gt;”XF86AudioRaiseVolume”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;action&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;”Execute”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;startupnotify&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;enabled&amp;gt;&lt;/span&gt;true&lt;span class="nt"&gt;&amp;lt;/enabled&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;Audio raise&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/startupnotify&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;command&amp;gt;&lt;/span&gt;amixer sset Master 2%+&lt;span class="nt"&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/action&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/keybind&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;keybind&lt;/span&gt; &lt;span class="na"&gt;key=&lt;/span&gt;&lt;span class="s"&gt;”XF86AudioLowerVolume”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;action&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;”Execute”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;startupnotify&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;enabled&amp;gt;&lt;/span&gt;true&lt;span class="nt"&gt;&amp;lt;/enabled&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;Audio lower&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/startupnotify&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;command&amp;gt;&lt;/span&gt;amixer sset Master 2%- &lt;span class="nt"&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/action&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/keybind&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;4.在终端中运行$-&amp;gt; &lt;code&gt;openbox –reconfigure done&lt;/code&gt;,现在可以享受快捷键带来的快感了。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yuan He</dc:creator><pubDate>Mon, 01 Apr 2013 23:36:00 +0800</pubDate><guid>tag:lenage.me,2013-04-01:my-super-post.html</guid><category>thats</category><category>awesome</category></item><item><title>My super title</title><link>http://lenage.me/my-super-post1.html</link><description>&lt;p&gt;This is the content of my super blog post.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yuan He</dc:creator><pubDate>Mon, 01 Apr 2013 23:36:00 +0800</pubDate><guid>tag:lenage.me,2013-04-01:my-super-post1.html</guid><category>thats</category><category>awesome</category></item><item><title>openbox 配置指南</title><link>http://lenage.me/my-test2-post.html</link><description>&lt;p&gt;背景：之前用ubuntu+gnome的时候快捷键有效，切换到archlinux+openbox后快捷键失灵，只能用alsamixer调节音量，
+安装过volwheel，但还是不好用，后来在#ubuntu-cn频道找到了解决办法，如下：&lt;/p&gt;
+&lt;p&gt;1.确定内核是否支持，在终端中运行 xev，然后触摸按键，看输出：
+    KeyRelease event, serial 40, synthetic NO, window 0×2600001,
+    root 0x15a, subw 0×0, time 20902899, (240,92), root:(387,402),
+    state 0×0, keycode 121 (keysym 0x1008ff12, XF86AudioMute), same_screen YES,
+    XLookupString gives 0 bytes:
+    XFilterEvent returns: False&lt;/p&gt;
+&lt;p&gt;如果能得到如上的输出，你得到的不一定和我的完全一样，但至少要能在其中找到按键标识，即上面红色指出的部分。&lt;/p&gt;
+&lt;p&gt;2.从上面的输出我们可以看出，该按键市静音按钮，用vim或者你喜欢的编辑器打开 &lt;code&gt;~/.config/openbox/rc.xml&lt;/code&gt;文件，
+找到keybind部分；然后设置按键&lt;code&gt;XF86AudioMute&lt;/code&gt;运行&lt;code&gt;amixer sset Master,0 toggle：&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;keybind&lt;/span&gt; &lt;span class="na"&gt;key=&lt;/span&gt;&lt;span class="s"&gt;”XF86AudioMute”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;action&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;”Execute”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;startupnotify&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;enabled&amp;gt;&lt;/span&gt;true&lt;span class="nt"&gt;&amp;lt;/enabled&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;Audio mute&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/startupnotify&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;command&amp;gt;&lt;/span&gt;amixer sset Master,0 toggle&lt;span class="nt"&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/action&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/keybind&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;3.用第一步的方法得到增大音量和减小音量的按键标识分别是&lt;code&gt;XF86AudioRaiseVolume&lt;/code&gt;和&lt;code&gt;XF86AudioLowerVolume&lt;/code&gt;；
+分别绑定为&lt;code&gt;amixer sset Master 2%+&lt;/code&gt;（增加音量）&lt;code&gt;amixer sset Master 2%-&lt;/code&gt;（减小音量），如下：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;keybind&lt;/span&gt; &lt;span class="na"&gt;key=&lt;/span&gt;&lt;span class="s"&gt;”XF86AudioMute”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;keybind&lt;/span&gt; &lt;span class="na"&gt;key=&lt;/span&gt;&lt;span class="s"&gt;”XF86AudioRaiseVolume”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;action&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;”Execute”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;startupnotify&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;enabled&amp;gt;&lt;/span&gt;true&lt;span class="nt"&gt;&amp;lt;/enabled&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;Audio raise&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/startupnotify&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;command&amp;gt;&lt;/span&gt;amixer sset Master 2%+&lt;span class="nt"&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/action&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/keybind&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;keybind&lt;/span&gt; &lt;span class="na"&gt;key=&lt;/span&gt;&lt;span class="s"&gt;”XF86AudioLowerVolume”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;action&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;”Execute”&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;startupnotify&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;enabled&amp;gt;&lt;/span&gt;true&lt;span class="nt"&gt;&amp;lt;/enabled&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;Audio lower&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/startupnotify&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;command&amp;gt;&lt;/span&gt;amixer sset Master 2%- &lt;span class="nt"&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/action&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/keybind&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;4.在终端中运行$-&amp;gt; &lt;code&gt;openbox –reconfigure done&lt;/code&gt;,现在可以享受快捷键带来的快感了。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yuan He</dc:creator><pubDate>Mon, 01 Apr 2013 23:36:00 +0800</pubDate><guid>tag:lenage.me,2013-04-01:my-test2-post.html</guid><category>thats</category><category>awesome</category></item></channel></rss>

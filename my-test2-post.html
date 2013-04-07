@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-        <title>LIFE WITH PI - Home</title>
+        <title>openbox 配置指南</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="http://lenage.me/theme/css/main.css" type="text/css" />
                 <link href="http://lenage.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="LIFE WITH PI Atom Feed" />
@@ -29,10 +29,16 @@
           </div>
           <h1 id="title-small"> <a href="http://lenage.me/">LIFE WITH PI </a></h1>
                         </header><!-- /#banner -->
-                                        <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="http://lenage.me/my-super-post.html">openbox 配置指南</a></h1>
-                    <footer class="post-info">
+        <section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://lenage.me/my-test2-post.html" rel="bookmark"
+           title="Permalink to openbox 配置指南">openbox 配置指南</a></h1>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
         <abbr class="published" title="2013-04-01T23:36:00">
                 Mon 01 April 2013
         </abbr>
@@ -41,17 +47,14 @@
                 By <a class="url fn" href="http://lenage.me/author/yuan-he.html">Yuan He</a>
         </address>
         <p>In <a href="http://lenage.me/category/home.html">Home</a>. </p>
-<p>tags: <a href="http://lenage.me/tag/thats.html">thats</a><a href="http://lenage.me/tag/awesome.html">awesome</a></p></footer><!-- /.post-info --><p>背景：之前用ubuntu+gnome的时候快捷键有效，切换到archlinux+openbox后快捷键失灵，只能用alsamixer调节音量，
+<p>tags: <a href="http://lenage.me/tag/thats.html">thats</a><a href="http://lenage.me/tag/awesome.html">awesome</a></p></footer><!-- /.post-info -->      <p>背景：之前用ubuntu+gnome的时候快捷键有效，切换到archlinux+openbox后快捷键失灵，只能用alsamixer调节音量，
 安装过volwheel，但还是不好用，后来在#ubuntu-cn频道找到了解决办法，如下：</p>
-<p>1.确定内核是否支持，在终端中运行 xev，然后触摸按键，看输出：</p>
-<div class="codehilite"><pre><span class="n">KeyRelease</span> <span class="n">event</span><span class="p">,</span> <span class="n">serial</span> 40<span class="p">,</span> <span class="n">synthetic</span> <span class="n">NO</span><span class="p">,</span> <span class="n">window</span> 0×2600001<span class="p">,</span>
-<span class="n">root</span> 0<span class="n">x15a</span><span class="p">,</span> <span class="n">subw</span> 0×0<span class="p">,</span> <span class="n">time</span> 20902899<span class="p">,</span> <span class="p">(</span>240<span class="p">,</span>92<span class="p">),</span> <span class="n">root</span><span class="p">:(</span>387<span class="p">,</span>402<span class="p">),</span>
-<span class="n">state</span> 0×0<span class="p">,</span> <span class="n">keycode</span> 121 <span class="p">(</span><span class="n">keysym</span> 0<span class="n">x1008ff12</span><span class="p">,</span> <span class="n">XF86AudioMute</span><span class="p">),</span> <span class="n">same</span><span class="o">\</span><span class="n">_screen</span> <span class="n">YES</span><span class="p">,</span>
-<span class="n">XLookupString</span> <span class="n">gives</span> 0 <span class="n">bytes</span><span class="p">:</span>
-<span class="n">XFilterEvent</span> <span class="n">returns</span><span class="p">:</span> <span class="n">False</span>
-</pre></div>
-
-
+<p>1.确定内核是否支持，在终端中运行 xev，然后触摸按键，看输出：
+    KeyRelease event, serial 40, synthetic NO, window 0×2600001,
+    root 0x15a, subw 0×0, time 20902899, (240,92), root:(387,402),
+    state 0×0, keycode 121 (keysym 0x1008ff12, XF86AudioMute), same_screen YES,
+    XLookupString gives 0 bytes:
+    XFilterEvent returns: False</p>
 <p>如果能得到如上的输出，你得到的不一定和我的完全一样，但至少要能在其中找到按键标识，即上面红色指出的部分。</p>
 <p>2.从上面的输出我们可以看出，该按键市静音按钮，用vim或者你喜欢的编辑器打开 <code>~/.config/openbox/rc.xml</code>文件，
 找到keybind部分；然后设置按键<code>XF86AudioMute</code>运行<code>amixer sset Master,0 toggle：</code></p>
@@ -91,56 +94,12 @@
 </pre></div>
 
 
-<p>4.在终端中运行$-&gt; <code>openbox –reconfigure done</code>,现在可以享受快捷键带来的快感了。</p>                </article>
-                            </aside><!-- /#featured -->
-                            <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-                                                                                <li><article class="hentry">
-                <header>
-                    <h1><a href="http://lenage.me/my-super-post1.html" rel="bookmark"
-                           title="Permalink to My super title">My super title</a></h1>
-                </header>
-                <div class="entry-content">
-                  <footer class="post-info">
-        <abbr class="published" title="2013-04-01T23:36:00">
-                Mon 01 April 2013
-        </abbr>
-
-                <address class="vcard author">
-                By <a class="url fn" href="http://lenage.me/author/yuan-he.html">Yuan He</a>
-        </address>
-        <p>In <a href="http://lenage.me/category/home.html">Home</a>. </p>
-<p>tags: <a href="http://lenage.me/tag/thats.html">thats</a><a href="http://lenage.me/tag/awesome.html">awesome</a></p></footer><!-- /.post-info -->                    some Summary
-                    <a class="readmore" href="http://lenage.me/my-super-post1.html">read more</a>
-                                  </div><!-- /.entry-content -->
-            </article></li>
-                                                            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://lenage.me/my-test2-post.html" rel="bookmark"
-                           title="Permalink to openbox 配置指南">openbox 配置指南</a></h1>
-                </header>
-                <div class="entry-content">
-                  <footer class="post-info">
-        <abbr class="published" title="2013-04-01T23:36:00">
-                Mon 01 April 2013
-        </abbr>
-
-                <address class="vcard author">
-                By <a class="url fn" href="http://lenage.me/author/yuan-he.html">Yuan He</a>
-        </address>
-        <p>In <a href="http://lenage.me/category/home.html">Home</a>. </p>
-<p>tags: <a href="http://lenage.me/tag/thats.html">thats</a><a href="http://lenage.me/tag/awesome.html">awesome</a></p></footer><!-- /.post-info -->                    ok, lets, say somthing
-                    <a class="readmore" href="http://lenage.me/my-test2-post.html">read more</a>
-                                  </div><!-- /.entry-content -->
-            </article></li>
-                            </ol><!-- /#posts-list -->
-                            <p class="paginator">
-        Page 1 / 1
-    </p>
-                        </section><!-- /#content -->
-                    <footer id="contentinfo" class="body">
+<p>4.在终端中运行$-&gt; <code>openbox –reconfigure done</code>,现在可以享受快捷键带来的快感了。</p>
+    </div><!-- /.entry-content -->
+    
+  </article>
+</section>
+        <footer id="contentinfo" class="body">
           <a class="pi-status-hook">π status</a>
                     <ul class="social">
             <li><a href="http://lenage.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
