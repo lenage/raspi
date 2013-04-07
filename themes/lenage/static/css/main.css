@@ -160,7 +160,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 #banner {
 	margin: 0 auto;
   height: 25em;
-  background: url(../images/banner_bg.jpg) no-repeat 0 -84px;
+  background: url(https://s3.amazonaws.com/pi.lenage.me/pi.jpg) no-repeat 0 -84px;
   background-size: 120%;
   color: #fff;
   text-align: center;
