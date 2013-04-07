@@ -34,6 +34,7 @@ PS: 现在能买到的大多数都是`Model B`, 区分起来也非常简单，**
 | Power ratings (provisional, from alpha board) | 500 mA, (2.5 W)                                                                                                                                  | 700 mA, (3.5 W)                                          |
 | Power source                                  | 5 V (DC) via Micro USB type B or GPIO header                                                                                                     |                                                          |
 | Size                                          | 85.0 x 56.0 mm (two different boards, measured with callipers)                                                                                   |                                                          |
+更加详细内容请参见[wiki](http://elinux.org/RPi_Hardware)
 
 晒一下我的π:
 ![Raspberry pi](https://s3.amazonaws.com/pi.lenage.me/pi.jpg)
