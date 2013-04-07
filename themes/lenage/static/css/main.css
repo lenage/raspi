@@ -1,18 +1,18 @@
 /*
-	Name: Smashing HTML5
-	Date: July 2009
+	Name: Lenage
+	Date: Apr 2013
 	Description: Sample layout for HTML5 and CSS3 goodness.
 	Version: 1.0
-	Author: Enrique Ramírez
-	Autor URI: http://enrique-ramirez.com
+	Author: Yuan He
+	Autor URI: http://blog.lenage.com
 */
 
 /* Imports */
 @import url("reset.css");
 @import url("pygment.css");
 @import url("typogrify.css");
+@import url("font.css");
 @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
-
 /***** Global *****/
 /* Body */
 body {
@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 	line-height: 1.1;
 	margin-bottom: .8em;
-    font-family: 'Yanone Kaffeesatz', arial, serif;
+  font-family: 'Yanone Kaffeesatz', arial, serif;
 }
 
 h3, h4, h5, h6 { margin-top: .8em; }
@@ -49,12 +49,12 @@ hr { border: 2px solid #EEEEEE; }
 a {outline: 0;}
 a img {border: 0px; text-decoration: none;}
 a:link, a:visited {
-	color: #C74350;
+	color: #173823;
 	padding: 0 1px;
 	text-decoration: underline;
 }
 a:hover, a:active {
-	background-color: #C74350;
+	background-color: #13371f;
 	color: #fff;
 	text-decoration: none;
 	text-shadow: 1px 1px 1px #333;
@@ -85,6 +85,10 @@ ol {
     float:right;
     margin:10px;
     padding:5px;
+    font-size: 0.8em;
+    color: #999;
+    font-family: "Menlo", "Monaco", "Lucida Console", Monospace;
+    -webkit-font-smoothing: antialiased;
 }
 
 .post-info p{
@@ -140,7 +144,13 @@ aside, nav, article, figure {
 }
 
 /***** Layout *****/
-.body {clear: both; margin: 0 auto; width: 800px;}
+.body {
+  clear: both;
+  margin: 0 auto;
+  width: 940px;
+  padding: 0 20px;
+}
+
 img.right, figure.right {float: right; margin: 0 0 2em 2em;}
 img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 
@@ -149,25 +159,42 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 *****************/
 #banner {
 	margin: 0 auto;
-	padding: 2.5em 0 0 0;
+  height: 25em;
+  background: url(../images/banner_bg.jpg) no-repeat 0 -84px;
+  background-size: 120%;
+  color: #fff;
+  text-align: center;
 }
 
 	/* Banner */
-	#banner h1 {font-size: 3.571em; line-height: 0;}
 	#banner h1 a:link, #banner h1 a:visited {
-		color: #000305;
+		color: #fff;
 		display: block;
-		font-weight: bold;
-		margin: 0 0 .6em .2em;
 		text-decoration: none;
 	}
+
 	#banner h1 a:hover, #banner h1 a:active {
 		background: none;
-		color: #C74350;
-		text-shadow: none;
+		color: #FFF;
+	  text-shadow: none;
 	}
 
-	#banner h1 strong {font-size: 0.36em; font-weight: normal;}
+	#banner h1 {
+    font-size: 3.571em;
+    padding-top: 3em;
+    margin-bottom: 0;
+    font-family: 'OutageRegular', arial, serif;
+  }
+
+  #banner h2{
+    font-family: "Menlo", "Monaco", "Lucida Console", Monospace;
+    margin-top: 0.8em;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+  }
 
 	/* Main Nav */
 	#banner nav {
@@ -197,7 +224,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	}
 	#banner nav a:hover, #banner nav a:active,
 	#banner nav .active a:link, #banner nav .active a:visited {
-		background: #C74451;
+		background: #173823;
 		color: #fff;
 		text-shadow: none !important;
 	}
@@ -217,14 +244,10 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 *****************/
 #featured {
 	background: #fff;
-	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px;
-	width: 760px;
-
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
 }
 
 #featured figure {
@@ -235,7 +258,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 }
 #featured figure img {display: block; float: right;}
 
-#featured h2 {color: #C74451; font-size: 1.714em; margin-bottom: 0.333em;}
+#featured h2 {color: #173823; font-size: 1.714em; margin-bottom: 0.333em;}
 #featured h3 {font-size: 1.429em; margin-bottom: .5em;}
 
 #featured h3 a:link, #featured h3 a:visited {color: #000305; text-decoration: none;}
@@ -248,12 +271,9 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	background: #fff;
 	margin-bottom: 2em;
 	overflow: hidden;
-	padding: 20px 20px;
-	width: 760px;
-
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+	padding: 0 20px;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
 }
 
 /*
@@ -264,7 +284,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 #extras ul {list-style: none; margin: 0;}
 #extras li {border-bottom: 1px solid #fff;}
 #extras h2 {
-	color: #C74350;
+	color: #
 	font-size: 1.429em;
 	margin-bottom: .25em;
 	padding: 0 3px;

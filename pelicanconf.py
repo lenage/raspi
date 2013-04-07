@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 
 AUTHOR = u'Yuan He'
-SITENAME = u'Life with π'
+SITENAME = u'LIFE WITH PI'
 SITESUBTITLE = u'Yuan\'s Raspberry Pi notes'
 SITEURL = 'http://lenage.me'
 FEED_DOMAIN = 'http://lenage.me'
@@ -25,8 +25,10 @@ SOCIAL = (('twitter', 'http://twitter.com/heyuan'),
           ('Bitbucket', 'http://bitbucket.org/lenage'))
 
 # Github
-GITHUB_URL = "https://github.com/lenage"
+# GITHUB_URL = "https://github.com/lenage"
 
+# Twitter
+TWITTER_USERNAME = "heyuan"
 # static paths will be copied under the same name
 STATIC_PATHS = ["pictures", ]
 
