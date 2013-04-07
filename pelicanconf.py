@@ -21,7 +21,7 @@ THEME = "./themes/lenage"
 
 # Social widget
 SOCIAL = (('twitter', 'http://twitter.com/heyuan'),
-          ('github', 'http://github.com/lenage'),
+          ('github', 'http://github.com/lenage/raspi'),
           ('Bitbucket', 'http://bitbucket.org/lenage'))
 
 # Github

@@ -10,5 +10,5 @@ Summary: 新入手Raspberry Pi，爆一下硬件配置
 现在重新折腾起。:)
 
 先上一张近照:
-![Raspberry pi](/static/images/pi.jpg)
+![Raspberry pi](./static/images/pi.jpg)
 PS:图中的排线需要自己购买，淘宝上大概￥8左右。
