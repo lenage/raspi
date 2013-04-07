@@ -12,7 +12,7 @@ $(function(){
   var b = $("#tagline");
   var r = $("#title-small");
   var a = 84;
-  var d = $("#featured");
+  var d = $("#featured").length > 0 ? $("#featured") : $("#content");
   var s;
   d.css({
     paddingTop: o + 20 + "px"
@@ -55,11 +55,7 @@ $(function(){
             opacity: 0
         });
         if (s > 225) { r.css({opacity: 0 + ((s - 250) / 130)});}
-        if ((o - s) < 85) {
-          k.css({top: "84px"});
-        } else {
-            k.css({top: o - s + "px"});
-        } if (s > 500) {
+        if (s > 500) {
             $("#header-pagination").fadeIn("fast");
         } else {
             $("#header-pagination").fadeOut("fast");
