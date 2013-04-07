@@ -28,8 +28,11 @@
 <body id="index" class="home">
 {#% include 'github.html' %#}
         <header id="banner" class="body">
+          <div class="header-inner">
                 <h1><a href="{{ SITEURL }}/">{{ SITENAME }} </a></h1>
-                <h2>{% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}</h2>
+                <h2 id="tagline">{% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}</h2>
+          </div>
+          <h1 id="title-small"> <a href="{{ SITEURL }}/">{{ SITENAME }} </a></h1>
                 {#
                 <nav><ul>
                 {% for title, link in MENUITEMS %}
@@ -64,21 +67,12 @@
           {% endif %}
         </footer><!-- /#contentinfo -->
 
-        <section id="extras" class="body">
-          {% if LINKS %}
-          <div class="blogroll">
-            <h2>blogroll</h2>
-            <ul>
-              {% for name, link in LINKS %}
-              <li><a href="{{ link }}">{{ name }}</a></li>
-              {% endfor %}
-            </ul>
-          </div><!-- /.blogroll -->
-          {% endif %}
-          <img src="https://api.cosm.com/v2/feeds/120935/datastreams/5min.png?width=400&height=200&duration=3hours&colour=%2344A340&title=%CF%80%20Realtime%20Load&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Beijing"/><br/>
-          <img style="margin-left: 10px;" src="https://api.cosm.com/v2/feeds/120935/datastreams/temp.png?width=400&height=200&duration=3hours&colour=%23f15a24&title=%CF%80%20Realtime%20CPU%20Temp&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Beijing"/>
+        <section id="status" class="body">
+          <h2>Raspberry Pi status:</h2>
+            <img src="https://api.cosm.com/v2/feeds/120935/datastreams/5min.png?width=400&height=200&duration=3hours&colour=%2344A340&title=%CF%80%20Realtime%20Load&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Beijing"/>
+            <img style="float: right" src="https://api.cosm.com/v2/feeds/120935/datastreams/temp.png?width=400&height=200&duration=3hours&colour=%23f15a24&title=%CF%80%20Realtime%20CPU%20Temp&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Beijing"/>
         </section><!-- /#extras -->
-
+        <script src="{{ SITEURL}}/theme/js/main.js"></script>
 {% include 'analytics.html' %}
 {% include 'piwik.html' %}
 {% include 'disqus_script.html' %}

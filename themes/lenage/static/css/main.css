@@ -164,8 +164,30 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
   background-size: 120%;
   color: #fff;
   text-align: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-left: -490px;
+  min-height: 80px!important;
 }
 
+#banner #title-small {
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 99;
+  height: auto;
+  min-height: 80px;
+  line-height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+#banner #title-small a{
+  color: #173823;
+}
 	/* Banner */
 	#banner h1 a:link, #banner h1 a:visited {
 		color: #fff;
@@ -181,9 +203,12 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 
 	#banner h1 {
     font-size: 3.571em;
-    padding-top: 3em;
     margin-bottom: 0;
     font-family: 'OutageRegular', arial, serif;
+  }
+
+  #banner .header-inner h1{
+    padding-top: 3em;
   }
 
   #banner h2{
@@ -393,6 +418,11 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 .social a[href*='gittip.com'] {background-image: url('../images/icons/gittip.png');}
 .social a[href*='plus.google.com'] {background-image: url('../images/icons/google-plus.png');}
 
+
+/***** Status *****/
+#status {
+  display: none;
+}
 /***** Sections *****/
 /* Blog */
 .hentry {
