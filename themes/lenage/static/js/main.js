@@ -4,7 +4,6 @@ $(function(){
     $("html, body").animate({ scrollTop: $(document).height() }, "slow");
   });
 
-  $("#title-small").css("opacity", 0);
   var n = $(".header-inner");
   var t = $("#banner");
   var o = t.delay(5000).height();
