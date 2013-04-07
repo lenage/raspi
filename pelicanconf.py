@@ -30,7 +30,6 @@ SOCIAL = (('twitter', 'http://twitter.com/heyuan'),
 # Twitter
 # TWITTER_USERNAME = "heyuan"
 # static paths will be copied under the same name
-STATIC_PATHS = ["pictures", ]
 
 # A list of files to copy from the source to the destination
 FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),)
