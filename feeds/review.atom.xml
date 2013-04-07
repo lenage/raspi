@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>LIFE WITH PI</title><link href="http://lenage.me/" rel="alternate"></link><link href="http://lenage.me/feeds/review.atom.xml" rel="self"></link><id>http://lenage.me/</id><updated>2013-04-06T18:56:00+08:00</updated><entry><title>Raspberry Pi硬件参数</title><link href="http://lenage.me/raspberry-hareware-info.html" rel="alternate"></link><updated>2013-04-06T18:56:00+08:00</updated><author><name>Yuan He</name></author><id>tag:lenage.me,2013-04-06:raspberry-hareware-info.html</id><summary type="html">&lt;p&gt;2012-11-15(Thu) 入手的，之前安装好&lt;a href="http://xbmc.org/"&gt;XBMC&lt;/a&gt;之后用的挺好的，后来超频导致不能启动，于是又搁置了一段时间,
+现在重新折腾起。:)&lt;/p&gt;
+&lt;p&gt;先上一张近照:
+&lt;img alt="Raspberry pi" src="/static/images/pi.jpg" /&gt;
+PS:图中的排线需要自己购买，淘宝上大概￥8左右。&lt;/p&gt;</summary><category term="hardware"></category></entry></feed>
