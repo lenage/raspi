@@ -169,6 +169,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
   left: 50%;
   margin-left: -490px;
   min-height: 80px!important;
+  z-index: 50;
 }
 
 #banner #title-small {
@@ -183,10 +184,13 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
   line-height: 80px;
   width: 100%;
   border-bottom: 1px solid #eee;
+  font-size: 36px;
 }
 
 #banner #title-small a{
   color: #173823;
+  padding-left: 21px;
+
 }
 	/* Banner */
 	#banner h1 a:link, #banner h1 a:visited {
