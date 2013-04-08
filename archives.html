@@ -44,15 +44,17 @@
                         <li><a href="http://lenage.me/feeds/all.rss.xml" type="application/rss+xml" rel="alternate">rss feed</a></li>
             
                         <li><a href="http://twitter.com/heyuan">twitter</a></li>
-                        <li><a href="http://github.com/lenage">github</a></li>
+                        <li><a href="http://weibo.com/lendage">Weibo</a></li>
+                        <li><a href="http://github.com/lenage/raspi">github</a></li>
                         <li><a href="http://bitbucket.org/lenage">Bitbucket</a></li>
                       </ul>
                   </footer><!-- /#contentinfo -->
 
         <section id="status" class="body">
+          <p>* This site is running on Raspberry Pi and powdered by <a href="https://github.com/getpelican/pelican">Pelican</a></p>
           <h2>Raspberry Pi status:</h2>
-            <img src="https://api.cosm.com/v2/feeds/120935/datastreams/5min.png?width=400&height=200&duration=3hours&colour=%2344A340&title=%CF%80%20Realtime%20Load&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Beijing"/>
-            <img style="float: right" src="https://api.cosm.com/v2/feeds/120935/datastreams/temp.png?width=400&height=200&duration=3hours&colour=%23f15a24&title=%CF%80%20Realtime%20CPU%20Temp&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Beijing"/>
+          <img src="https://api.cosm.com/v2/feeds/120935/datastreams/5min.png?width=400&height=200&duration=3hours&colour=%2344A340&title=%CF%80%20Realtime%20Load&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Beijing"/>
+          <img style="float: right" src="https://api.cosm.com/v2/feeds/120935/datastreams/temp.png?width=400&height=200&duration=3hours&colour=%23f15a24&title=%CF%80%20Realtime%20CPU%20Temp&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Beijing"/>
         </section><!-- /#extras -->
         <script src="./theme/js/main.js"></script>
 <script type="text/javascript">
@@ -63,6 +65,15 @@
 
   ga('create', 'UA-34087103-4', 'lenage.me');
   ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+    var disqus_shortname = 'lenageonpi';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
 </script>
 </body>
 </html>

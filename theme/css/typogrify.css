@@ -1,3 +1,18 @@
 .caps {font-size:.92em;}
-.amp {color:#666; font-size:1.05em;font-family:"Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua",serif; font-style:italic;}    
+.amp {color:#666; font-size:1.05em;font-family:"Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua",serif; font-style:italic;}
 .dquo {margin-left:-.38em;}
+
+article h1,
+article h2,
+article h3,
+article h4 {
+  font-weight: bold;
+}
+
+article thead tr {
+  background: #eee;
+}
+article table td {
+  font-size: 12px;
+  border-bottom: 1px solid #eee;
+}
