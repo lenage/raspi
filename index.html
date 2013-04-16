@@ -149,7 +149,7 @@
 <img alt="Raspberry pi" src="https://s3.amazonaws.com/pi.lenage.me/pi.jpg" />
 PS:图中的排线需要自己购买，淘宝上大概￥8左右。
 (完)</p>
-<p>Last updated: Sun Apr  7 23:09:08 2013</p><p><a href="./raspberry-hareware-info.html#disqus_thread">comments</a>.</p>                </article>
+<p>Last updated: Sun Apr  7 23:09:08 2013</p>                </article>
                                     <p class="paginator">
         Page 1 / 1
     </p>
@@ -185,14 +185,19 @@ PS:图中的排线需要自己购买，淘宝上大概￥8左右。
   ga('create', 'UA-34087103-4', 'lenage.me');
   ga('send', 'pageview');
 </script>
+
 <script type="text/javascript">
-    var disqus_shortname = 'lenageonpi';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
+(function(){
+var url = "http://widget.weibo.com/distribution/comments.php?width=0&url=auto&skin=9&ralateuid=1646281441&appkey=2233699991&iframskin=9&dpc=1";
+url = url.replace("url=auto", "url=" + document.URL);
+document.write('<iframe id="WBCommentFrame" src="' + url + '" scrolling="no" frameborder="0" style="width:100%"></iframe>');
+})();
+</script>
+<script src="http://tjs.sjs.sinajs.cn/open/widget/js/widget/comment.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+window.WBComment.init({
+    "id": "WBCommentFrame"
+});
 </script>
 </body>
 </html>
