@@ -33,7 +33,8 @@ SOCIAL = (('twitter', 'http://twitter.com/heyuan'),
 # static paths will be copied under the same name
 
 # DISQUS_SITENAME="lenageonpi"
-WEIBO_COMMENT="yes"
+WEIBO_APP_KEY="2233699991"
+WEIBO_RELATED_UID="1646281441"
 # A list of files to copy from the source to the destination
 FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),('extra/CNAME', 'CNAME'), ('extra/favicon.ico', 'favicon.ico'))
 
