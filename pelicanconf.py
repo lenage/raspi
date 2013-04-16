@@ -34,6 +34,6 @@ SOCIAL = (('twitter', 'http://twitter.com/heyuan'),
 
 DISQUS_SITENAME="lenageonpi"
 # A list of files to copy from the source to the destination
-FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),('extra/CNAME', 'CNAME'))
+FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),('extra/CNAME', 'CNAME'), ('extra/favicon.ico', 'favicon.ico'))
 
 DEFAULT_PAGINATION = 15
