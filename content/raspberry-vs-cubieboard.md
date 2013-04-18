@@ -4,7 +4,7 @@ Tags: hardware
 Category: misc
 Slug: raspberry-vs-cuibeboard
 Author: Yuan He
-Summary: 新入手Raspberry Pi，爆一下硬件配置
+Summary: Raspberry Pi、CubieBoard、Gooseberry、APC Rock、Hackberry A10 对比
 
 各种ARM设备对比，详见[这里](http://techwatch.keeward.com/geeks-and-nerds/arduino-vs-raspberry-pi-vs-cubieboard-vs-gooseberry-vs-apc-rock-vs-olinuxino-vs-hackberry-a10/)
 
