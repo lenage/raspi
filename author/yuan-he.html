@@ -215,12 +215,14 @@ PS:图中的排线需要自己购买，淘宝上大概￥8左右。
         <section id="status" class="body">
           <p>* This Site running on
             <!--# if expr="$geoip_country_code = /CN/"-->
-            my Raspberry Pi
+            <!--# set var="hostwhere" value="my Raspberry Pi"-->
+            <!--# echo var="hostwhere" -->
             <!--# else-->
             <a href="https://github.com">Github</a>
             <!--# endif-->
             and powdered by <a href="https://github.com/getpelican/pelican">Pelican</a>
           </p>
+          <p>Your IP: <!--# echo var="remote_addr"--> <!--# echo var="geoip_city"--></p>
           <h2>Raspberry Pi status:</h2>
           <img src="https://api.cosm.com/v2/feeds/120935/datastreams/5min.png?width=400&height=200&duration=3hours&colour=%2344A340&title=%CF%80%20Realtime%20Load&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Beijing"/>
           <img style="float: right" src="https://api.cosm.com/v2/feeds/120935/datastreams/temp.png?width=400&height=200&duration=3hours&colour=%23f15a24&title=%CF%80%20Realtime%20CPU%20Temp&show_axis_labels=true&detailed_grid=true&scale=auto&timezone=Beijing"/>
