@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN" xmlns:wb="http://open.weibo.com/wb">
 <head>
-        <title>LIFE WITH PI</title>
+        <title>Raspberry显示当前CPU频率</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
                 <link href="http://lenage.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="LIFE WITH PI Atom Feed" />
@@ -31,11 +31,44 @@
           </div>
           <h1 id="title-small" style="opacity: 0"> <a href="./">LIFE WITH PI </a></h1>
                         </header><!-- /#banner -->
-        <ul>
-    <li><a href="./category/misc.html">misc</a></li>
-    <li><a href="./category/review.html">review</a></li>
-    <li><a href="./category/tips.html">tips</a></li>
-</ul>
+        <section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="./raspberry-show_freq_after_overlocking.html" rel="bookmark"
+           title="Permalink to Raspberry显示当前CPU频率">Raspberry显示当前CPU频率</a></h1>
+          </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <abbr class="published" title="2013-04-22T10:56:26">
+                Mon 22 April 2013
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="./author/yuan-he.html">Yuan He</a>
+        </address>
+        <p>In <a href="./category/tips.html">tips</a>. </p>
+<p>tags: <a href="./tag/vcgencmd.html">vcgencmd</a></p></footer><!-- /.post-info -->      <p>Raspberry Pi ArchLinux的vcgencmd安装在<code>/opt/vc/bin/</code>下面，需要自己把<code>/opt/vc/bin</code> 加到PATH里面：</p>
+<div class="codehilite"><pre><span class="n">export</span> <span class="n">PATH</span><span class="p">=</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vc</span><span class="o">/</span><span class="n">bin</span><span class="p">:</span>$<span class="n">PATH</span>
+</pre></div>
+
+
+<p>或者直接这样用：</p>
+<div class="codehilite"><pre><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vc</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">vcgencmd</span> <span class="n">get_config</span> <span class="n">arm_freq</span>
+# 列出所有命令
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vc</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">vcgencmd</span> <span class="n">commands</span>
+# <span class="n">vcgencmd</span> 版本
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vc</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">vcgencmd</span> <span class="n">version</span>
+</pre></div>
+
+
+<p><a href="http://elinux.org/RPI_vcgencmd_usage">vcgencmd wiki</a></p>
+    </div><!-- /.entry-content -->
+        <wb:comments url="auto" width="auto" skin="gray" appkey="2233699991" ralateuid="1646281441" ></wb:comments>
+        
+  </article>
+</section>
         <footer id="contentinfo" class="body">
           <a class="pi-status-hook">π status</a>
                     <ul class="social">

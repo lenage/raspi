@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>LIFE WITH PI</title><link href="http://lenage.me/" rel="alternate"></link><link href="http://lenage.me/feeds/tips.atom.xml" rel="self"></link><id>http://lenage.me/</id><updated>2013-04-22T10:56:26+08:00</updated><entry><title>Raspberry显示当前CPU频率</title><link href="http://lenage.me/raspberry-show_freq_after_overlocking.html" rel="alternate"></link><updated>2013-04-22T10:56:26+08:00</updated><author><name>Yuan He</name></author><id>tag:lenage.me,2013-04-22:raspberry-show_freq_after_overlocking.html</id><summary type="html">&lt;p&gt;Raspberry Pi ArchLinux的vcgencmd安装在&lt;code&gt;/opt/vc/bin/&lt;/code&gt;下面，需要自己把&lt;code&gt;/opt/vc/bin&lt;/code&gt; 加到PATH里面：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;PATH&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;$&lt;span class="n"&gt;PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;或者直接这样用：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vcgencmd&lt;/span&gt; &lt;span class="n"&gt;get_config&lt;/span&gt; &lt;span class="n"&gt;arm_freq&lt;/span&gt;
+# 列出所有命令
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vcgencmd&lt;/span&gt; &lt;span class="n"&gt;commands&lt;/span&gt;
+# &lt;span class="n"&gt;vcgencmd&lt;/span&gt; 版本
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vcgencmd&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://elinux.org/RPI_vcgencmd_usage"&gt;vcgencmd wiki&lt;/a&gt;&lt;/p&gt;</summary><category term="vcgencmd"></category></entry></feed>

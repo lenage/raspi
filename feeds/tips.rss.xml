@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>LIFE WITH PI</title><link>http://lenage.me/</link><description>Yuan's Raspberry Pi notes</description><atom:link href="http://lenage.me/feeds/tips.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 22 Apr 2013 10:56:26 +0800</lastBuildDate><item><title>Raspberry显示当前CPU频率</title><link>http://lenage.me/raspberry-show_freq_after_overlocking.html</link><description>&lt;p&gt;Raspberry Pi ArchLinux的vcgencmd安装在&lt;code&gt;/opt/vc/bin/&lt;/code&gt;下面，需要自己把&lt;code&gt;/opt/vc/bin&lt;/code&gt; 加到PATH里面：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;PATH&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;$&lt;span class="n"&gt;PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;或者直接这样用：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vcgencmd&lt;/span&gt; &lt;span class="n"&gt;get_config&lt;/span&gt; &lt;span class="n"&gt;arm_freq&lt;/span&gt;
+# 列出所有命令
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vcgencmd&lt;/span&gt; &lt;span class="n"&gt;commands&lt;/span&gt;
+# &lt;span class="n"&gt;vcgencmd&lt;/span&gt; 版本
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vcgencmd&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://elinux.org/RPI_vcgencmd_usage"&gt;vcgencmd wiki&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Yuan He</dc:creator><pubDate>Mon, 22 Apr 2013 10:56:26 +0800</pubDate><guid>tag:lenage.me,2013-04-22:raspberry-show_freq_after_overlocking.html</guid><category>vcgencmd</category></item></channel></rss>
