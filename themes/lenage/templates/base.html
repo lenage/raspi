@@ -74,7 +74,8 @@
         <section id="status" class="body">
           <p>* This Site running on
             <!--# if expr="$geoip_country_code = /CN/"-->
-            my Raspberry Pi
+            <!--# set var="hostwhere" value="my Raspberry Pi"-->
+            <!--# echo var="hostwhere" -->
             <!--# else-->
             <a href="https://github.com">Github</a>
             <!--# endif-->
