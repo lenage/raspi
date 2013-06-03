@@ -4,7 +4,7 @@ Tags: hardware
 Category: review
 Slug: raspberry-hareware-info
 Author: Yuan He
-Summary: Raspberry Pi配置
+Summary: Raspberry Pi硬件参数，供想入手的朋友参考
 
 2012-11-15(Thu) 入手的，之前安装好[XBMC](http://xbmc.org/)之后用的挺好的, 但是后来超频导致不能启动，于是又搁置了一段时间,
 现在重新折腾起。:)

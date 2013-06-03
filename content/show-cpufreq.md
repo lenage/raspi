@@ -4,7 +4,7 @@ Tags: vcgencmd
 Category: tips
 Slug: raspberry-show_freq_after_overlocking
 Author: Yuan He
-Summary: 超频之后显示当前CPU频率
+Summary: 如何在超频之后显示当前CPU频率？
 
 Raspberry Pi ArchLinux的vcgencmd安装在`/opt/vc/bin/`下面，需要自己把`/opt/vc/bin` 加到PATH里面：
 

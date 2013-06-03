@@ -7,7 +7,7 @@ Author: Yuan He
 Summary: 备份Raspberry Pi SD Card
 
 1. $ `cd ~/raspberry-pi/backups`
-2. $ `df -h` 查看SD卡，比如:`/dev/disk2s1`
+2. $ `df -h` 查看SD卡，比如我的是`/dev/disk2s1`
 3. $ `diskutil unmount /dev/disk2s1`
 4. $ `dd if=/dev/rdisk2 of=~/raspberry-pi/backups/raspi-todaysdate-backup.img bs=1m`, 这里`disk2s1`要换成`rdisk2`
 5. 等执行完之后,`diskutil eject /dev/rdisk1`
